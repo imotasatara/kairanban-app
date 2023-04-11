@@ -1,0 +1,23 @@
+<%= form_with model: @information, url: new_information_path, local: true do |f| %>
+  <div class="field">
+    <%= f.label :title, "タイトル" %><br />
+    <%= f.text_field :title, id:"kairanban_title" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content, "案内の内容" %><br />
+    <%= f.text_area :content, class: :form__text, id:"kairanban_content" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "画像" %><br />
+    <%= f.file_field :image, id:"kairanban_image" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>
+<%= link_to :back do %>
+  <button>戻る</button>
+<% end %>

@@ -1,0 +1,80 @@
+<%= render "devise/shared/second_header" %>
+
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <h2 class="page-heading">ユーザー新規登録</h2>
+
+        <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+
+        <%= render partial: 'devise/shared/error_messages', model: f.object %>
+        <div class="field">
+          <%= f.label :email, "メールアドレス" %><br />
+          <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, "パスワード（6文字以上）" %><br />
+          <%= f.password_field :password, id:"user_password", autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation, "パスワード再入力" %><br />
+          <%= f.password_field :password_confirmation, id:"user_password_confirmation", autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <div class="name-area">
+            <%= f.label :name, "お名前" %><br />
+            <%= f.text_field :last_name, id:"user_name", placeholder: "例）山田" %>
+            <%= f.text_field :first_name, id:"user_name", placeholder: "例）太郎" %>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="name-area">
+            <%= f.label :name_kana, "お名前(フリガナ)" %><br />
+            <%= f.text_field :last_name_kana, id:"user_name", placeholder: "例）ヤマダ" %>
+            <%= f.text_field :first_name_kana, id:"user_name", placeholder: "例）タロウ" %>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= f.label :postal_code, "郵便番号" %><br />
+          <%= f.text_field :postal_code, id:"postal_code" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :address, "住所" %><br />
+          <%= f.text_field :address, class: :form__text, id:"address" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :phone_number, "電話番号" %><br />
+          <%= f.text_field :phone_number, id:"phone_number" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :relationship_id, "続柄" %><br />
+          <%= f.collection_select(:relationship_id, Relationship.all, :id, :name, {}) %>
+        </div>
+
+        <div class="field">
+          <%= f.label :emergency_contact, "緊急連絡先(電話番号)" %><br />
+          <%= f.text_field :emergency_contact, id:"emergency_contact" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "新規登録", class: :form__btn  %>
+        </div>
+
+        <%= link_to :back do %>
+        <button>戻る</button>
+        <% end %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render "devise/shared/footer" %>
