@@ -41,7 +41,7 @@
 
         <div class="field">
           <%= f.label :postal_code, "郵便番号" %><br />
-          <%= f.text_field :postal_code, id:"postal_code" %>
+          <%= f.text_field :postal_code, id:"postal_code", placeholder: "例）123-4567" %>
         </div>
 
         <div class="field">
@@ -51,7 +51,7 @@
 
         <div class="field">
           <%= f.label :phone_number, "電話番号" %><br />
-          <%= f.text_field :phone_number, id:"phone_number" %>
+          <%= f.text_field :phone_number, id:"phone_number", placeholder: "ハイフンなし" %>
         </div>
 
         <div class="field">
@@ -61,7 +61,7 @@
 
         <div class="field">
           <%= f.label :emergency_contact, "緊急連絡先(電話番号)" %><br />
-          <%= f.text_field :emergency_contact, id:"emergency_contact" %>
+          <%= f.text_field :emergency_contact, id:"emergency_contact", placeholder: "ハイフンなし" %>
         </div>
 
         <div class="actions">
