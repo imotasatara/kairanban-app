@@ -9,7 +9,7 @@ class User < ApplicationRecord
               :address, :phone_number, :relationship_id, :emergency_contact
   end
 
-  validates :genre_id, numericality: { other_than: 0 } 
+  validates :relationship_id, numericality: { other_than: 0 } 
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :relationship
