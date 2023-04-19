@@ -2,6 +2,22 @@
 
 <main class="main">
   <div class="kairanban-main">
+    <% if user_signed_in? %>
+      <% @informations.each do |information| %>
+        <div class='information-lists'>
+          <div class="list-title">
+            <%= information.title %>
+          </div>
+          <div class="list">
+            <%= information.content %>
+          </div>
+          <%= image_tag information.image.variant(resize: '180x240'), class: "information-img" if information.image.attached? %>
+          <div class="date">
+            <%= information.created_at.strftime('%Y/%m/%d') %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </main>
 

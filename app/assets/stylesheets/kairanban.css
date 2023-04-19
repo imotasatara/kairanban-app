@@ -100,7 +100,25 @@ a {
 .kairanban-main{
   width: 100%;
   height: 100vh;
+  text-align: center;
+  padding-top: 40px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.information-lists{
+  margin: 0 auto;
+}
+
+.list-title{
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.list{
+  margin: 10px 0;
+  font-size: 25px;
 }
 
 .greeting{
