@@ -8,6 +8,7 @@
         </div>
           <h2><%= link_to "回覧板", informations_path, class: :header_title %></h2>
         <div class="nav__right">
+          <%= link_to "新規投稿", new_information_path, class: :nav__logout %>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
         </div>
       <% else %>
