@@ -1,8 +1,8 @@
 <%= render "devise/shared/header" %>
 
 <main class="main">
+<% if user_signed_in? %>
   <div class="kairanban-main">
-    <% if user_signed_in? %>
       <% @informations.each do |information| %>
         <div class='information-lists'>
           <div class="list-title">
@@ -17,8 +17,18 @@
           </div>
         </div>
       <% end %>
+  </div>
+  <div class="calender">
+    <%= month_calendar events: @events do |date, events| %>
+      <%= date.day %>
+      <% events.each do |event| %>
+        <div>
+          <%= event.title %>
+        </div>
+      <% end %>
     <% end %>
   </div>
+<% end %>
 </main>
 
 <%= render "devise/shared/footer" %>
