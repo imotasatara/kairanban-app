@@ -1,6 +1,7 @@
 class InformationsController < ApplicationController
   def index
     @informations = Information.all.order('created_at DESC')
+    @events = Information.all
   end
 
   def new
@@ -18,6 +19,6 @@ class InformationsController < ApplicationController
 
   private
   def information_params
-    params.require(:information).permit(:title, :content, :image).merge(user_id: current_user.id)
+    params.require(:information).permit(:title, :content, :image, :start_time).merge(user_id: current_user.id)
   end
 end

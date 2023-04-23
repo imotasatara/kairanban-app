@@ -93,15 +93,15 @@ a {
 
 /* メイン */
 .main{
+  width: 100%;
+  height: 100vh;
   padding-top: 48px;
   background-color: rgb(242, 233, 233);
 }
 
 .kairanban-main{
-  width: 100%;
-  height: 100vh;
   text-align: center;
-  padding-top: 40px;
+  padding: 40px 0 120px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -136,6 +136,11 @@ a {
 .new_content{
   width: 400px;
   height: 150px;
+}
+
+.calender{
+  background-color: #ffffff;
+  margin: 80px;
 }
 
 /* フッター */

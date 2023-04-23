@@ -22,6 +22,11 @@
             <%= f.file_field :image, id:"image" %>
           </div>
 
+          <div class="time">
+            <%= f.label :start_time, "日付" %><br />
+            <%= f.datetime_select :start_time %>
+          </div>
+
           <div class="actions">
             <%= f.submit "新規投稿", class: :form__btn  %>
           </div>
