@@ -12,7 +12,7 @@
             <%= information.content %>
           </div>
           <%= image_tag information.image.variant(resize: '180x240'), class: "information-img" if information.image.attached? %>
-          <div class="date">
+          <div class="date">投稿日：
             <%= information.created_at.strftime('%Y/%m/%d') %>
           </div>
         </div>
